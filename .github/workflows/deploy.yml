@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '18'
       - run: npm ci
-      - run: npm run build -- --base=${{ vars.BASE_PATH }}
+      - run: npm run build -- --base=/${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
